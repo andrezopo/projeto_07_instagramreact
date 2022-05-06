@@ -1,7 +1,4 @@
 import ReactDOM from "react-dom";
-function NomeDaAba() {
-  return "Instagrande";
-}
+import App from "./App";
 
-let titulo = NomeDaAba();
-ReactDOM.render(titulo, document.querySelector("title"));
+ReactDOM.render(<App />, document.querySelector(".root"));
