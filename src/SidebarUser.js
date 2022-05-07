@@ -1,9 +1,9 @@
-export default function SidebarUser() {
+export default function SidebarUser(props) {
   return (
     <div class="usuario">
-      <img src="../instagram/assets/img/catanacomics.svg" />
+      <img src={props.userImg} />
       <div class="texto">
-        <strong>catanacomics</strong>
+        <strong>{props.userName}</strong>
         Catana
       </div>
     </div>
