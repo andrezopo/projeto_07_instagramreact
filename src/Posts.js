@@ -1,7 +1,4 @@
-import TopoPost from "./TopoPost";
-import ConteudoPost from "./ConteudoPost";
-import AcoesPost from "./AcoesPost";
-import CurtidasPost from "./CurtidasPost";
+import Post from "./Post";
 
 const postsList = [
   {
@@ -21,23 +18,6 @@ const postsList = [
     likedNumber: "99.159",
   },
 ];
-
-function Post(props) {
-  return (
-    <div class="post">
-      <TopoPost pageImg={props.pageImage} name={props.pageName} />
-      <ConteudoPost postImage={props.postImage} />
-      <div class="fundo">
-        <AcoesPost />
-        <CurtidasPost
-          likedImage={props.likedPageImage}
-          likedName={props.likedPageName}
-          Number={props.likedNumber}
-        />
-      </div>
-    </div>
-  );
-}
 
 export default function Posts() {
   return (
