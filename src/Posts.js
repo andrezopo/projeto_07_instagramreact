@@ -1,39 +1,39 @@
-function Post() {
+import TopoPost from "./TopoPost";
+import ConteudoPost from "./ConteudoPost";
+import AcoesPost from "./AcoesPost";
+import CurtidasPost from "./CurtidasPost";
+
+const postsList = [
+  {
+    pageImage: "../instagram/assets/img/meowed.svg",
+    pageName: "meowed",
+    postImage: "../instagram/assets/img/gato-telefone.svg",
+    likedPageImage: "../instagram/assets/img/respondeai.svg",
+    likedPageName: "respondeai",
+    likedNumber: "101.523",
+  },
+  {
+    pageImage: "../instagram/assets/img/barked.svg",
+    pageName: "barked",
+    postImage: "../instagram/assets/img/dog.svg",
+    likedPageImage: "../instagram/assets/img/adorable_animals.svg",
+    likedPageName: "adorable_animals",
+    likedNumber: "99.159",
+  },
+];
+
+function Post(props) {
   return (
     <div class="post">
-      <div class="topo">
-        <div class="usuario">
-          <img src="../instagram/assets/img/meowed.svg" />
-          meowed
-        </div>
-        <div class="acoes">
-          <ion-icon name="ellipsis-horizontal"></ion-icon>
-        </div>
-      </div>
-
-      <div class="conteudo">
-        <img src="../instagram/assets/img/gato-telefone.svg" />
-      </div>
-
+      <TopoPost pageImg={props.pageImage} name={props.pageName} />
+      <ConteudoPost postImage={props.postImage} />
       <div class="fundo">
-        <div class="acoes">
-          <div>
-            <ion-icon name="heart-outline"></ion-icon>
-            <ion-icon name="chatbubble-outline"></ion-icon>
-            <ion-icon name="paper-plane-outline"></ion-icon>
-          </div>
-          <div>
-            <ion-icon name="bookmark-outline"></ion-icon>
-          </div>
-        </div>
-
-        <div class="curtidas">
-          <img src="../instagram/assets/img/respondeai.svg" />
-          <div class="texto">
-            Curtido por <strong>respondeai</strong> e{" "}
-            <strong>outras 101.523 pessoas</strong>
-          </div>
-        </div>
+        <AcoesPost />
+        <CurtidasPost
+          likedImage={props.likedPageImage}
+          likedName={props.likedPageName}
+          Number={props.likedNumber}
+        />
       </div>
     </div>
   );
@@ -42,79 +42,16 @@ function Post() {
 export default function Posts() {
   return (
     <div class="posts">
-      <div class="post">
-        <div class="topo">
-          <div class="usuario">
-            <img src="../instagram/assets/img/meowed.svg" />
-            meowed
-          </div>
-          <div class="acoes">
-            <ion-icon name="ellipsis-horizontal"></ion-icon>
-          </div>
-        </div>
-
-        <div class="conteudo">
-          <img src="../instagram/assets/img/gato-telefone.svg" />
-        </div>
-
-        <div class="fundo">
-          <div class="acoes">
-            <div>
-              <ion-icon name="heart-outline"></ion-icon>
-              <ion-icon name="chatbubble-outline"></ion-icon>
-              <ion-icon name="paper-plane-outline"></ion-icon>
-            </div>
-            <div>
-              <ion-icon name="bookmark-outline"></ion-icon>
-            </div>
-          </div>
-
-          <div class="curtidas">
-            <img src="../instagram/assets/img/respondeai.svg" />
-            <div class="texto">
-              Curtido por <strong>respondeai</strong> e{" "}
-              <strong>outras 101.523 pessoas</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="post">
-        <div class="topo">
-          <div class="usuario">
-            <img src="../instagram/assets/img/barked.svg" />
-            barked
-          </div>
-          <div class="acoes">
-            <ion-icon name="ellipsis-horizontal"></ion-icon>
-          </div>
-        </div>
-
-        <div class="conteudo">
-          <img src="../instagram/assets/img/dog.svg" />
-        </div>
-
-        <div class="fundo">
-          <div class="acoes">
-            <div>
-              <ion-icon name="heart-outline"></ion-icon>
-              <ion-icon name="chatbubble-outline"></ion-icon>
-              <ion-icon name="paper-plane-outline"></ion-icon>
-            </div>
-            <div>
-              <ion-icon name="bookmark-outline"></ion-icon>
-            </div>
-          </div>
-
-          <div class="curtidas">
-            <img src="../instagram/assets/img/adorable_animals.svg" />
-            <div class="texto">
-              Curtido por <strong>adorable_animals</strong> e{" "}
-              <strong>outras 99.159 pessoas</strong>
-            </div>
-          </div>
-        </div>
-      </div>
+      {postsList.map((post) => (
+        <Post
+          pageImage={post.pageImage}
+          pageName={post.pageName}
+          postImage={post.postImage}
+          likedPageImage={post.likedPageImage}
+          likedPageName={post.likedPageName}
+          likedNumber={post.likedNumber}
+        />
+      ))}
     </div>
   );
 }

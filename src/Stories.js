@@ -9,42 +9,42 @@ function Story(props) {
   );
 }
 
-const storiesList = [
-  {
-    image: "../instagram/assets/img/9gag.svg",
-    pageName: "9gag",
-  },
-  {
-    image: "../instagram/assets/img/meowed.svg",
-    pageName: "meowed",
-  },
-  {
-    image: "../instagram/assets/img/barked.svg",
-    pageName: "barked",
-  },
-  {
-    image: "../instagram/assets/img/nathanwpylestrangeplanet.svg",
-    pageName: "nathanwpylestrangeplanet",
-  },
-  {
-    image: "../instagram/assets/img/wawawicomics.svg",
-    pageName: "wawawicomics",
-  },
-  {
-    image: "../instagram/assets/img/respondeai.svg",
-    pageName: "respondeai",
-  },
-  {
-    image: "../instagram/assets/img/filomoderna.svg",
-    pageName: "filomoderna",
-  },
-  {
-    image: "../instagram/assets/img/memeriagourmet.svg",
-    pageName: "memeriagourmet",
-  },
-];
-
 export default function Stories() {
+  const storiesList = [
+    {
+      image: "../instagram/assets/img/9gag.svg",
+      pageName: "9gag",
+    },
+    {
+      image: "../instagram/assets/img/meowed.svg",
+      pageName: "meowed",
+    },
+    {
+      image: "../instagram/assets/img/barked.svg",
+      pageName: "barked",
+    },
+    {
+      image: "../instagram/assets/img/nathanwpylestrangeplanet.svg",
+      pageName: "nathanwpylestrangeplanet",
+    },
+    {
+      image: "../instagram/assets/img/wawawicomics.svg",
+      pageName: "wawawicomics",
+    },
+    {
+      image: "../instagram/assets/img/respondeai.svg",
+      pageName: "respondeai",
+    },
+    {
+      image: "../instagram/assets/img/filomoderna.svg",
+      pageName: "filomoderna",
+    },
+    {
+      image: "../instagram/assets/img/memeriagourmet.svg",
+      pageName: "memeriagourmet",
+    },
+  ];
+
   return (
     <div class="stories">
       {storiesList.map((story) => (

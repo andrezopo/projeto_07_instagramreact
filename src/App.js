@@ -2,6 +2,8 @@ import ReactDOM from "react-dom";
 import Navbar from "./Navbar";
 import Stories from "./Stories";
 import Posts from "./Posts";
+import Sidebar from "./Sidebar";
+import BottomMobile from "./BottomMobile";
 
 export default function App() {
   return (
@@ -12,7 +14,9 @@ export default function App() {
           <Stories />
           <Posts />
         </div>
+        <Sidebar />
       </div>
+      <BottomMobile />
     </div>
   );
 }
